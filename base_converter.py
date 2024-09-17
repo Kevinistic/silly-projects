@@ -18,13 +18,13 @@ while continue_flag: # looping from the very below
         print("nuh uh")
         continue
 
-    base_a = int(base_a)
+    base_a = int(base_a) # integerify
     base_b = int(base_b)
 
     while True: # idiot proof
-        if '0' in input_number[0]:
+        if '0' in input_number[0] and not '.' in input_number[1]: # 0X.X to X.X, except for 0.X
             input_number = input_number[1:]
-        elif '0' in input_number[-1]:
+        elif '0' in input_number[-1]: # X.X0 to X.X
             input_number = input_number[:-1]
         else: break
 
@@ -35,9 +35,8 @@ while continue_flag: # looping from the very below
     fraction_number = input_number[dot+1:]
 
     integer_number_digits = len(integer_number)
-    integer_reversed_number = integer_number[::-1]
     fraction_number_digits = len(fraction_number)
-    fraction_reversed_number = fraction_number[::-1]
+    integer_reversed_number = integer_number[::-1]
 
     base36_list = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -49,7 +48,7 @@ while continue_flag: # looping from the very below
     
     fraction_main_number = 0
     for i in range(fraction_number_digits):
-        index_number = base36_list.find(fraction_reversed_number[i])
+        index_number = base36_list.find(fraction_number[i])
         test = index_number * (base_a ** -(i+1))
         fraction_main_number += test
 
