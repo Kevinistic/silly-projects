@@ -6,11 +6,7 @@ import math # importing math...
 continue_flag = True
 while continue_flag: # looping from the very below
     input_number = input("Enter your current number: ").upper() # get main number
-    while True:
-        if input_number[0] == '0' and not input_number[1] == '.':
-            input_number = input_number[1:]
-        else: break
-    if input_number < 0:
+    if '-' in input_number:
         print("negative numbers currently unsupported")
         continue
     base_a = input("Enter your current base: ") # get current base
@@ -52,7 +48,7 @@ while continue_flag: # looping from the very below
         while main_number >= base_b**highest_exp:
             main_number = main_number - base_b**highest_exp
             counter += 1
-            results_list.append(base36_list[counter])
+        results_list.append(base36_list[counter])
         if main_number == 0 and base_b**highest_exp == base_b:
             results_list.append("0")
         highest_exp -= 1
