@@ -21,4 +21,5 @@ while True:
             price_memory = price_temp
     
     most_worth = print(f"The most worth: {price_memory}/{amount_memory} ({rate_memory})")
-    previous = print(f"Previous one: {price_temp}/{amount_temp} ({rate_temp})")
+    previous = print(f"Previous one: {price_temp}/{amount_temp} ({rate_temp})\n")
+    
