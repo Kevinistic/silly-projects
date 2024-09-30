@@ -1,0 +1,17 @@
+message = input("Enter your message: ")
+cipher = int(input("Enter the cipher: "))
+
+abet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+abet_ciphered = abet[cipher:] + abet[:cipher]
+
+message_new = ''
+
+for i in range(len(message)):
+    if message[i].capitalize() in abet:
+        for j in range(len(abet)):
+            if message[i].capitalize() == abet[j]:
+                message_new += abet_ciphered[j]
+    else: message_new += message[i]
+
+print("Your ciphered message:")
+print(message_new)
