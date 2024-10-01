@@ -7,11 +7,11 @@ abet_ciphered = abet[cipher:] + abet[:cipher]
 message_new = ''
 
 for i in range(len(message)):
-    if message[i].capitalize() in abet:
+    if message[i].capitalize() in abet_ciphered:
         for j in range(len(abet)):
-            if message[i].capitalize() == abet[j]:
-                message_new += abet_ciphered[j]
+            if message[i].capitalize() == abet_ciphered[j]:
+                message_new += abet[j]
     else: message_new += message[i]
 
-print("Your enciphered message:")
+print("Your deciphered message:")
 print(message_new)
