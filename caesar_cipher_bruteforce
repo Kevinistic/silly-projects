@@ -1,0 +1,27 @@
+msg = input('Enter your message: ')
+alph = ['A', 'B', 'C', 'D', 'E', 
+        'F', 'G', 'H', 'I', 'J',
+        'K', 'L', 'M', 'N', 'O',
+        'P', 'Q', 'R', 'S', 'T',
+        'U', 'V', 'W', 'X', 'Y',
+        'Z', 'A', 'B', 'C', 'D', 'E', 
+        'F', 'G', 'H', 'I', 'J',
+        'K', 'L', 'M', 'N', 'O',
+        'P', 'Q', 'R', 'S', 'T',
+        'U', 'V', 'W', 'X', 'Y',
+        'Z', 
+        ]
+ctr = 1
+while True:
+    msg_ciph = ''
+    for i in msg:
+        if i.capitalize() in alph:
+            msg_ciph += alph[alph.index(i.capitalize())+ctr]
+
+    print(f'Iteration {ctr}: {msg_ciph}')
+    if ctr == 25:
+        break
+    conf = input('Continue? ')
+    if conf == 'exit':
+        break
+    ctr += 1
