@@ -40,7 +40,7 @@ def main():
             print(f'Decrypted message: {msg_crypt}')
         main()
     else: 
-        print('bruh')
+        print('Invalid input!')
         main()
 
 if __name__ == '__main__':
