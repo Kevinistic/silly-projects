@@ -1,0 +1,47 @@
+alph = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4,
+        'F':5, 'G':6, 'H':7, 'I':8, 'J':9,
+        'K':10, 'L':11, 'M':12, 'N':13, 'O':14,
+        'P':15, 'Q':16, 'R':17, 'S':18, 'T':19,
+        'U':20, 'V':21, 'W':22, 'X':23, 'Y':24,
+        'Z':25
+        }
+
+alph_key = list(alph.keys())
+alph_val = list(alph.values())
+
+def main():
+    print('\n1: Encrypt, 2: Decrypt, 3: Exit')
+
+    select = input('Select: ')
+    if select == '3':
+        print('bye')
+
+    elif select == '1' or select == '2':
+        msg = input('\nMessage: ')
+        key = input('Key: ')
+        
+        msg = msg.upper()
+        key = key.upper()
+        msg_crypt = ''
+        key_ctr = 0
+        for m in msg:
+            if select == '1':
+                m_crypt = (alph[m] + alph[key[key_ctr]])%26
+            else: 
+                m_crypt = (alph[m] - alph[key[key_ctr]])%26
+            pos = alph_val.index(m_crypt)
+            msg_crypt += alph_key[pos]
+            key_ctr += 1
+            if key_ctr == len(key)-1:
+                key_ctr = 0
+        if select == '1':
+            print(f'Encrypted message: {msg_crypt}')
+        else:
+            print(f'Decrypted message: {msg_crypt}')
+        main()
+    else: 
+        print('bruh')
+        main()
+
+if __name__ == '__main__':
+    main()
