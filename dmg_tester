@@ -1,0 +1,16 @@
+def calc(cri, crd, aspd, dmg):
+    if cri > 100:
+        cri -= 100
+    dps = (100-cri + cri*crd)*dmg*aspd
+
+    return dps
+
+
+d = calc(33, 2, 1, 1)
+print(d)
+a = calc(22, 2, 1, 1.0801)
+print(a)
+b = calc(11, 2, 1, 1.1602)
+print(b)
+c = calc(0, 2, 1, 1.2403)
+print(c)
